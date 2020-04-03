@@ -1,0 +1,21 @@
+<form (ngSubmit)="onSubmitForm(form)" #form="ngForm">
+  <p>
+    <label for="name">Nome completo:</label>
+    <input type="text" name="name" id="name" #nameCtrl="ngModel" ngModel required>
+    <span *ngIf="nameCtrl.status === 'INVALID' && nameCtrl.touched">Campo obrigatório!</span>
+  </p>
+
+  <p>
+    <label for="name">Email:</label>
+    <input type="text" name="email" id="email" ngModel>
+  </p>
+
+  <p>
+    <label for="name">Endereço:</label>
+    <input type="text" name="address" id="address" ngModel>
+  </p>
+
+  <p>
+    <button [disabled]="form.status === 'INVALID'">Cadastrar</button>
+  </p>
+</form>
